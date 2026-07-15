@@ -40,6 +40,8 @@ docker compose up --build
 
 Open `http://localhost:3000`. The demo ships pre-seeded with a curated ~100-node snapshot of real, publicly-sourced investment data — no API keys needed to look around.
 
+Don't want to spin it up? [`docs/platform-user-guide-private-system.pdf`](docs/platform-user-guide-private-system.pdf) walks through every tab with real screenshots — but note it's from the private, actively-maintained system with months of accumulated data, not from this demo's seed. This demo intentionally ships with an empty Review Queue/News/Runs history (see "How this was built" below); the guide shows what the same architecture looks like once it's been running against real data for a while.
+
 To run the backend as a library instead:
 
 ```bash
@@ -61,6 +63,7 @@ The project's scope has always been research and prototyping — validating whet
 ## Docs
 
 - [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) — the deeper technical story: package layout, pipeline stages, schema design
+- [`docs/platform-user-guide-private-system.pdf`](docs/platform-user-guide-private-system.pdf) — walkthrough with real screenshots from the private system (not this demo — see note in Quickstart)
 - [`evals/`](evals/) — extraction precision/recall eval, with results
 - API reference — run the server, visit `/docs`
 - [`CONTRIBUTING.md`](CONTRIBUTING.md)
