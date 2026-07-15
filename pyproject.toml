@@ -1,0 +1,33 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "moneygraph"
+version = "0.1.0"
+description = "Capital-rotation graph: tracks investment relationships across companies, VCs, and sovereign funds from SEC filings, RSS, and web search."
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi==0.115.0",
+    "uvicorn[standard]==0.30.6",
+    "psycopg2-binary==2.9.9",
+    "apscheduler==3.10.4",
+    "requests==2.32.3",
+    "rapidfuzz>=3.9.0",
+    "openai>=1.60.0",
+    "feedparser>=6.0.11",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0.0", "ruff>=0.6.0"]
+
+[project.scripts]
+moneygraph-api = "moneygraph.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/moneygraph"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
